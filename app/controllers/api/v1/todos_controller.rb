@@ -1,5 +1,6 @@
 class Api::V1::TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
+  skip_before_action :authorized, only: [:create]
 
   # GET /todos
   def index
